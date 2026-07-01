@@ -36,11 +36,6 @@ const exceptionHandler = (err, req, res, next) => {
         apiResponse.message = err.message;
     }
 
-    if (err instanceof EventPosterUploadError) {
-        apiResponse.code = err.statusCode;
-        apiResponse.message = err.message;
-        apiResponse.data = err.errors;
-    }
     return res.status(apiResponse.code).json(apiResponse);
 }
 
