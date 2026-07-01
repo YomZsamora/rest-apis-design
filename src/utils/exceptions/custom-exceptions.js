@@ -39,7 +39,7 @@ class PermissionDenied extends Error {
 class UnprocessedEntity extends Error {
 
     constructor() {
-        super("The request could not be processed.");
+        super("The request could not be processed. Please try again later.");
         this.statusCode = 422
         this.name = "UnprocessedEntity";
     }
