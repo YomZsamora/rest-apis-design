@@ -42,7 +42,6 @@ const idempotencyKeyHeaderMiddleware = async (req, res, next) => {
         return res.status(200).json({ ...stored.result, idempotent: true }); // If the payload hash matches, return the stored response with a 200 status code and an idempotent flag
     }
 
-    req.idempotencyKey = key; // Store the Idempotency-Key in the request object for later use
     req.payloadHash = hashChargePayload(req.body); // Store the hash of the request payload in the request object for later use
     const originalJson = res.json.bind(res); // Store the original res.json function to call later
     res.json = async (body) => { // Override the res.json function to store the response in Redis before sending it back to the client
