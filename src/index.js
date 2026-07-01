@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const paymentsRoutes = require('./app/routes/idempotency.routes');
+const paymentsRoutes = require('./app/routes/idempotency-routes');
 
 dotenv.config();
 
