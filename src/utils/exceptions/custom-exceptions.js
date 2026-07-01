@@ -36,10 +36,19 @@ class PermissionDenied extends Error {
     }
 }
 
+class UnprocessedEntity extends Error {
+
+    constructor() {
+        super("The request could not be processed.");
+        this.statusCode = 422
+        this.name = "UnprocessedEntity";
+    }
+}
 
 module.exports = { 
     BadRequest, 
     NotFound, 
     NotAuthenticated, 
-    PermissionDenied
+    PermissionDenied,
+    UnprocessedEntity
 };
