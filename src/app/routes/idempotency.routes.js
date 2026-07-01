@@ -4,6 +4,6 @@ const { idempotentPaymentHandler } = require('../controllers/idempotent-charge.c
 
 const router = express.Router();
 
-router.post('/', idempotencyMiddleware, idempotentPaymentHandler);
+router.post('/charge', idempotencyMiddleware, idempotentPaymentHandler);
 
 module.exports = router;
